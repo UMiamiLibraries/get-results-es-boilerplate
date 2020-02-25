@@ -1,0 +1,14 @@
+{
+  "name": "get-results-es-boilerplate/ingester-app",
+  "description": "An ingester app for the Get Results! With Elasticsearch Code4Lib 2020 workshop",
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Abel Facenda Carrasco",
+      "email": "afacendacarrasco@miami.edu"
+    }
+  ],
+  "require": {
+    "elasticsearch/elasticsearch": "7.6.1"
+  }
+}
