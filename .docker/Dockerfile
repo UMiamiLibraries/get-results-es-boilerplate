@@ -7,3 +7,8 @@ RUN mv composer.phar /usr/local/bin/composer && \
 
 #Remove php opcache file -- only for development
 RUN rm -rf /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+COPY ./.docker/init.sh /usr/local/bin/init.sh
+RUN chmod u+x /usr/local/bin/init.sh
+
+ENTRYPOINT ["/usr/local/bin/init.sh"]
