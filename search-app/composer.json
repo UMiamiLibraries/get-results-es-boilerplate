@@ -1,5 +1,4 @@
 {
-    "name": "get-results-es-boilerplate",
     "description": "A search app for the Get Results! With Elasticsearch Code4Lib 2020 workshop",
     "type": "project",
     "license": "GNU",
