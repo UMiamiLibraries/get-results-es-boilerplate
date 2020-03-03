@@ -5,7 +5,6 @@ namespace App\CustomScripts;
 use Elasticsearch\ClientBuilder;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
-require __DIR__ . '/../../vendor/autoload.php';
 
 class ElasticsearchIngester
 {
@@ -49,13 +48,7 @@ class ElasticsearchIngester
     public function createIndex()
     {
         $params = [
-            'index' => $this->indexName,
-            'body' => [
-                'settings' => [
-                    'number_of_shards' => 1,
-                    'number_of_replicas' => 2,
-                ],
-            ]
+            'index' => $this->indexName
         ];
 
         $this->elasticSearchClient->indices()->create($params);
@@ -87,8 +80,6 @@ class ElasticsearchIngester
 
         $progressBar->finish();
         echo PHP_EOL . 'Done ingesting data' . PHP_EOL;
-
-
     }
 
     private function prepareValues($results)
@@ -109,7 +100,8 @@ class ElasticsearchIngester
                 'location' => $result->location,
                 'url' => $result->url,
                 'notes' => $result->item->notes,
-                'image_url' => $result->image_url
+                'image_url' => $result->image_url,
+                'description' => $result->description
             ];
         }
 
