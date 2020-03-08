@@ -20,8 +20,6 @@ class ElasticsearchIngesterCommand extends Command
 
     public function __construct()
     {
-        $dotenv = new Dotenv();
-        $dotenv->load(__DIR__ . '/../../.env');
         $elastic_host_info = [
             $_ENV['ELASTIC_HOST'],
             $_ENV['ELASTIC_PORT'],
